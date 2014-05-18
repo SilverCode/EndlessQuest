@@ -22,6 +22,9 @@ void GameState::initObjects()
 	player->init();
 
 	objects.push_back(player);
+
+	background = new Background();
+	background->init();
 }
 
 void GameState::destroyObjects()
@@ -81,6 +84,8 @@ void GameState::destroy()
 
 void GameState::update()
 {
+	background->update();
+
 	for (vector<Object*>::iterator object = objects.begin(); object != objects.end(); ++object)
 	{
 		Object *tmpObject = (*object);
@@ -91,6 +96,8 @@ void GameState::update()
 void GameState::render()
 {
 	SDL_RenderClear(renderer);
+
+	background->render(renderer);
 
 	for (vector<Object*>::iterator object = objects.begin(); object != objects.end(); ++object)
 	{

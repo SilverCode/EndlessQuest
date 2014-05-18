@@ -7,11 +7,13 @@ QMAKE_CXXFLAGS += -std=c++11
 SOURCES += main.cpp \
 	object.cpp \
     gamestate.cpp \
-    player.cpp
+    player.cpp \
+    background.cpp
 
 HEADERS += \
 	object.h \
     gamestate.h \
     vector2d.h \
-    player.h
+    player.h \
+    background.h
 

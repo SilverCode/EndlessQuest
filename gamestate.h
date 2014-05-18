@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "object.h"
+#include "background.h"
 
 class GameState
 {
@@ -20,6 +21,7 @@ class GameState
 		int windowHeight;
 
 		std::vector<Object*> objects;
+		Background *background;
 
 		void initObjects();
 		void destroyObjects();
