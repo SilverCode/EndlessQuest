@@ -29,6 +29,8 @@ bool Player::init()
 	}
 
 	SDL_QueryTexture(playerTexture, NULL, NULL, &width, &height);
+	//width = 150;
+	//height = 100;
 
 	return true;
 }

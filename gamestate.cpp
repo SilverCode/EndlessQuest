@@ -37,7 +37,7 @@ bool GameState::init(string title, int width, int height)
 	this->windowWidth = width;
 	this->windowHeight = height;
 
-	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
+	if (SDL_Init(SDL_INIT_TIMER | SDL_INIT_VIDEO) != 0)
 	{
 		logSDLError(cout, "SDL_Init");
 		return false;
