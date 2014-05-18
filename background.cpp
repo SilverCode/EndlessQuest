@@ -23,6 +23,11 @@ void Background::genStars()
 	}
 }
 
+Background::~Background()
+{
+	SDL_DestroyTexture(backgroundTexture);
+}
+
 bool Background::init()
 {
 	// TODO: Really, really implement a texture handler

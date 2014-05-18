@@ -16,6 +16,7 @@ class Background
 
 	public:
 		Background() {}
+		~Background();
 
 		void render(SDL_Renderer* renderer);
 		bool init();

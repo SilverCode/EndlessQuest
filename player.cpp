@@ -10,6 +10,7 @@ Player::Player()
 {
 	width = 90;
 	height = 120;
+
 	// Start at the bottom middle of the screen
 	uint32_t xpos = GameState::get()->getWindowWidth()/2 - width/2;
 	uint32_t ypos = GameState::get()->getWindowHeight() - height*1.5;
@@ -36,6 +37,9 @@ bool Player::init()
 		return false;
 	}
 
+	weapon = new StandardLaserWeapon();
+	weapon->init();
+
 	return true;
 }
 
@@ -47,6 +51,8 @@ void Player::render(SDL_Renderer *renderer)
 	dest.w = width;
 	dest.h = height;
 	SDL_RenderCopy(renderer, playerTexture, NULL, &dest);
+
+	weapon->render(renderer);
 }
 
 void Player::handleInput()
@@ -84,10 +90,16 @@ void Player::handleInput()
 
 	acceleration.setX(accelX);
 	acceleration.setY(accelY);
+
+	if (keyState[SDL_SCANCODE_SPACE])
+	{
+		weapon->fire(position);
+	}
 }
 
 void Player::update()
 {
 	handleInput();
 	Object::update();
+	weapon->update();
 }

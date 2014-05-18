@@ -8,12 +8,14 @@ SOURCES += main.cpp \
 	object.cpp \
     gamestate.cpp \
     player.cpp \
-    background.cpp
+    background.cpp \
+    weapon.cpp
 
 HEADERS += \
 	object.h \
     gamestate.h \
     vector2d.h \
     player.h \
-    background.h
+    background.h \
+    weapon.h
 
