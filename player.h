@@ -12,12 +12,15 @@ class Player : public Object
 		int width;
 		int height;
 
+		void handleInput();
+
 	public:
 		Player();
 		~Player();
 
 		bool init();
 		void render(SDL_Renderer *renderer);
+		void update();
 };
 
 #endif // PLAYER_H

@@ -45,3 +45,46 @@ void Player::render(SDL_Renderer *renderer)
 	dest.h = height;
 	SDL_RenderCopy(renderer, playerTexture, NULL, &dest);
 }
+
+void Player::handleInput()
+{
+	const uint8_t* keyState = SDL_GetKeyboardState(NULL);
+
+	float accelX = acceleration.getX();
+	float accelY = acceleration.getY();
+
+	if (keyState[SDL_SCANCODE_RIGHT])
+	{
+		accelX = accelX == 0 ? 0.5 : 0;
+	}
+	else if (keyState[SDL_SCANCODE_LEFT])
+	{
+		accelX = accelX == 0 ? -0.5 : 0;
+	}
+	else
+	{
+		accelX = 0;
+	}
+
+	if(keyState[SDL_SCANCODE_UP])
+	{
+		accelY = accelY == 0 ? -0.5 : 0;
+	}
+	else if (keyState[SDL_SCANCODE_DOWN])
+	{
+		accelY = accelY == 0 ? 0.5 : 0;
+	}
+	else
+	{
+		accelY = 0;
+	}
+
+	acceleration.setX(accelX);
+	acceleration.setY(accelY);
+}
+
+void Player::update()
+{
+	handleInput();
+	Object::update();
+}

@@ -16,8 +16,7 @@ class Object
 		Object();
 		virtual ~Object() {}
 
-		void update();
-
+		virtual void update() = 0;
 		virtual bool init() = 0;
 		virtual void render(SDL_Renderer *renderer) = 0;
 };

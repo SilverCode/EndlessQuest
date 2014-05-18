@@ -109,9 +109,6 @@ void GameState::handleEvents()
 	{
 		if (sdlEvent.type == SDL_QUIT)
 			running = false;
-
-		if (sdlEvent.type == SDL_KEYDOWN)
-			running = false;
 	}
 }
 
