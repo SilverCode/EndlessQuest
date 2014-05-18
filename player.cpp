@@ -28,9 +28,10 @@ bool Player::init()
 		return false;
 	}
 
+	// Scale the image down, as the source is pretty darn big
 	SDL_QueryTexture(playerTexture, NULL, NULL, &width, &height);
-	//width = 150;
-	//height = 100;
+	width = width/4;
+	height = height/4;
 
 	return true;
 }
