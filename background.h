@@ -12,6 +12,8 @@ class Background
 		SDL_Texture* backgroundTexture;
 		std::vector<Vector2D > stars;
 
+		void genStars();
+
 	public:
 		Background();
 
