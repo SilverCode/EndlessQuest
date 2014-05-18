@@ -4,6 +4,13 @@ beyond basic boilerplate code. It represents my C++ version of my attempts for t
 Aside from the dream of actually finishing a game, this will also serves to act as a "code portfolio". Being
 only 1.5 days old, it is littered with TODO's and bugs, so tread lightly.
 
+# Source
+You can always find the latest version of the code at:
+
+ https://github.com/SilverCode/EndlessQuest.git
+
+It relies on SDL2 and has only been tested on Linux. Art is courtesy of opengameart.org.
+
 # License
 Copyright (c) 2014 Ross Simpson
 All Right Reserved
