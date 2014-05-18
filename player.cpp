@@ -8,6 +8,14 @@ using namespace std;
 
 Player::Player()
 {
+	width = 90;
+	height = 120;
+	// Start at the bottom middle of the screen
+	uint32_t xpos = GameState::get()->getWindowWidth()/2 - width/2;
+	uint32_t ypos = GameState::get()->getWindowHeight() - height*1.5;
+
+	position.setX(xpos);
+	position.setY(ypos);
 }
 
 Player::~Player()
@@ -27,11 +35,6 @@ bool Player::init()
 		logSDLError(cout, "Player::init(), IMG_LoadTexture");
 		return false;
 	}
-
-	// Scale the image down, as the source is pretty darn big
-	SDL_QueryTexture(playerTexture, NULL, NULL, &width, &height);
-	width = width/4;
-	height = height/4;
 
 	return true;
 }

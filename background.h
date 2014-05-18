@@ -15,7 +15,7 @@ class Background
 		void genStars();
 
 	public:
-		Background();
+		Background() {}
 
 		void render(SDL_Renderer* renderer);
 		bool init();

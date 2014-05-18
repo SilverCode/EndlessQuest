@@ -23,10 +23,6 @@ void Background::genStars()
 	}
 }
 
-Background::Background()
-{
-}
-
 bool Background::init()
 {
 	// TODO: Really, really implement a texture handler
